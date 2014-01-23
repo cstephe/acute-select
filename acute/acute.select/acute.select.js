@@ -19,7 +19,7 @@ angular.module("acute.select", [])
             "acSettings": "@",
             "acChange": "&",
             "keyField": "@acKey",
-            "model": "=acModel",
+            "model": "=acModel"
         },
         replace: true,
         templateUrl: defaultSettings.templatePath + "acute.select.htm",
@@ -278,6 +278,9 @@ angular.module("acute.select", [])
                 $scope.ensureDataLoaded();
                 $scope.searchText = $scope.comboText;
                 filterData($scope.comboText);
+                if($scope.settings.allowCustomText){
+                    $scope.model = $scope.comboText;
+                }
             };
 
             // Show/hide popup
