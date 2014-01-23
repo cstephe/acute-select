@@ -134,7 +134,7 @@ angular.module("acute.select", [])
             $scope.getItemFromDataItem = function(dataItem, itemIndex) {
                 var item = null;
                 if (dataItem !== null){
-                    if ($scope.textField === null) {
+                    if (!$scope.textField) {
                         item = { "text": dataItem, "value": dataItem, "index": itemIndex };
                     }
                     else if (dataItem[$scope.textField]) {
